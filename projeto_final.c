@@ -126,6 +126,14 @@ int main(int argc, char *argv[]) {
         erro_remessa("Cabecalho fora do padrao (esperado 9 caracteres e ID=1).");
     }
 
+    if (!data_valida(linha + 1)) {
+        fclose(f_in);
+        char msg[120];
+        sprintf(msg, "Cabecalho invalido: DATA_GERACAO ('%s') nao e uma data valida.",
+                linha + 1);
+        erro_remessa(msg);
+    }
+
     Boleto *boletos = malloc((size_t)MAX_BOLETOS * sizeof(Boleto));
     if (!boletos) {
         fclose(f_in);

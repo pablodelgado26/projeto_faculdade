@@ -1,0 +1,2 @@
+ERRO NO ARQUIVO DE REMESSA:
+Cabecalho invalido: DATA_GERACAO ('20261314') nao e uma data valida.
